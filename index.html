@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shortest Path Visualizer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar" aria-label="Controls">
+        <div class="sidebarHeader">
+          <div>
+            <h1>Shortest Path Visualizer</h1>
+            <p class="subtle">
+              Generate a random weighted graph and watch Dijkstra step-by-step.
+            </p>
+          </div>
+          <button
+            class="iconButton"
+            id="toggleSidebar"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span class="iconButtonBar"></span>
+            <span class="iconButtonBar"></span>
+            <span class="iconButtonBar"></span>
+          </button>
+        </div>
+
+        <div class="menuBackdrop" id="menuBackdrop" hidden></div>
+        <section class="menuPanel" id="menuPanel" hidden aria-label="Menu">
+          <div class="menuHeader">
+            <h2 class="menuTitle">Menu</h2>
+            <button class="menuClose" id="menuCloseBtn" type="button" aria-label="Close menu">✕</button>
+          </div>
+
+          <div class="menuSection">
+            <div class="menuSectionTitle">About</div>
+            <p id="aboutText" class="menuParagraph"></p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="cardTitle">Graph</h2>
+          <label class="field">
+            <span class="label">Number of edges</span>
+            <input type="number" id="edges" inputmode="numeric" min="1" max="21" placeholder="e.g. 10" />
+          </label>
+          <button id="generateGraphBtn" type="button">Generate Graph</button>
+        </section>
+
+        <section class="card">
+          <h2 class="cardTitle">Path</h2>
+          <div class="grid2">
+            <label class="field">
+              <span class="label">Start</span>
+              <input type="text" id="start" placeholder="A" maxlength="1" autocapitalize="characters" />
+            </label>
+            <label class="field">
+              <span class="label">End</span>
+              <input type="text" id="end" placeholder="G" maxlength="1" autocapitalize="characters" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Animation speed</span>
+            <input type="range" id="speed" min="0.25" max="2.5" value="1" step="0.05" />
+            <span class="help" id="speedLabel">1.00x</span>
+          </label>
+
+          <button id="findPathBtn" type="button">Find Path</button>
+        </section>
+
+        <section class="card">
+          <h2 class="cardTitle">Distance Table</h2>
+          <div id="distTable" class="mono"></div>
+        </section>
+
+        <section class="card">
+          <h2 class="cardTitle">Path &amp; Cost</h2>
+          <div id="historyTable" class="mono"></div>
+        </section>
+      </aside>
+
+      <main class="stage" aria-label="Graph visualization">
+        <div id="graph"></div>
+        <div class="toast" id="toast" hidden></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
