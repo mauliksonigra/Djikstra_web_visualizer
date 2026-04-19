@@ -15,27 +15,6 @@
 
 ## Screenshots
 
-Add PNGs to the [`screenshots/`](screenshots/) folder using the names below. Until those files exist in the repo, GitHub may show broken image icons here. More tips: [`screenshots/README.md`](screenshots/README.md).
-
-### How to add these screenshots (step by step)
-
-1. **Open the app** in your browser — either the [live demo](https://djikstra-web-visualizer.vercel.app/) or your local `index.html` / `npx serve` URL.
-2. **Resize the window** (optional) so the sidebar and graph both show clearly; wide layouts look best in the README.
-3. **First image — overview:** show the default or freshly generated graph with controls visible. Capture the screen (on Mac: **Shift + Command + 4**, drag a rectangle; or **Shift + Command + 3** for full screen).
-4. **Save as PNG** and name it exactly **`overview.png`**.
-5. **Second image — running:** click **Find Path** and capture while a node is highlighted mid-animation (yellow-style highlight / red edge try is fine). Save as **`running.png`**.
-6. **Third image — final path:** wait until the run finishes so the **green** path and **Path & Cost** text are visible. Save as **`final-path.png`**.
-7. **Put the three files** in your project folder **`screenshots/`** (same folder level as `index.html`), next to `screenshots/README.md`.
-8. **Commit and push** so GitHub can load the images:
-
-   ```bash
-   git add screenshots/overview.png screenshots/running.png screenshots/final-path.png
-   git commit -m "Add README screenshots"
-   git push
-   ```
-
-9. **Check GitHub:** open your repo’s main `README.md` on github.com — the three images should appear under **Screenshots**. If a picture is missing, double-check the filename spelling and that the file is inside `screenshots/`.
-
 <p align="center">
   <img src="screenshots/overview.png" alt="Overview: sidebar and graph" width="780" /><br />
   <em>Overview — controls + graph</em>
@@ -135,4 +114,4 @@ npx --yes serve .
 
 ---
 
-*Made with ❤️ by Maulik Sonigra*
+*Made with heart by Maulik Sonigra*
